@@ -1,9 +1,9 @@
 <!-- add your code here -->
 <?php
-#include '../database.php';
-#$pdo = Database::connect();
-#$sql="select * from teacher";
-#$result=$pdo->query($sql); 
+include '../database.php';
+$pdo = Database::connect();
+$sql="select * from teacher";
+$result=$pdo->query($sql); 
 ?>
 <!-- end of you add code  -->
 <!DOCTYPE html>
@@ -94,14 +94,14 @@
     <th>學歷</th>
   </tr>
 <?php
-$result = null;
+#$result = null;
     foreach ($result as $row) {
-#    echo "<tr>";
-#    echo "<td>".$row['id']."</td>";
-#    echo "<td>".$row['name']."</td>";
-#    echo "<td>".$row['birthday']."</td>";
-#    echo "<td>".$row['birthday']."</td>";
-#    echo "<td>".$row['birthday']."</td>";
+    echo "<tr>";
+    echo "<td>".$row['T_Id']."</td>";
+    echo "<td>".$row['T_Name']."</td>";
+    echo "<td>".$row['T_Interest']."</td>";
+    echo "<td>".$row['T_DepId']."</td>";
+    echo "<td>".$row['T_Degree']."</td>";
     #action button
     echo "<td width=250><center>";
     echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';

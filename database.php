@@ -11,6 +11,7 @@ class Database
   public static function connect(){
     $dsn = "mysql:host=".self::$hostname.";dbname=".self::$db_name;
     self::$cont = new PDO($dsn, self::$username, self::$password);
+    self::$cont->exec("set names utf8");
     return self::$cont;
   }
   public static function disconnect(){
