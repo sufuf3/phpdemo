@@ -1,3 +1,11 @@
+<!-- add your code here -->
+<?php
+#include '../database.php';
+#$pdo = Database::connect();
+#$sql="select * from teacher";
+#$result=$pdo->query($sql); 
+?>
+<!-- end of you add code  -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,23 +74,44 @@
 		                老師資料
 		            </h1>
                                     <div class="input-group searchbar">
-                                        <input type="text" class="form-control searchbar" placeholder="Search for...">
+                                        <input type="text" class="form-control searchbar" placeholder="Search for..." name="name">
                                         <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Search</button>
+                                        <button class="btn btn-default" type="button" name="submit">Search</button>
                                         </span>
                                     </div><!-- /input-group -->
 
 
 <!--              Add your code here                    -->
-
-
-
-
-
-
-
-
-
+<p>
+    <a href="create.php" class="btn btn-success">Create</a>
+</p>
+<table border="1">
+  <tr>
+    <th>老師代號</th>
+    <th>姓名</th>
+    <th>專長</th>
+    <th>系所</th>
+    <th>學歷</th>
+  </tr>
+<?php
+$result = null;
+    foreach ($result as $row) {
+#    echo "<tr>";
+#    echo "<td>".$row['id']."</td>";
+#    echo "<td>".$row['name']."</td>";
+#    echo "<td>".$row['birthday']."</td>";
+#    echo "<td>".$row['birthday']."</td>";
+#    echo "<td>".$row['birthday']."</td>";
+    #action button
+    echo "<td width=250><center>";
+    echo '<a class="btn btn-success" href="update.php?id='.$row['id'].'">Update</a>';
+    echo ' ';
+    echo '<a class="btn btn-danger" href="delete.php?id='.$row['id'].'">Delete</a>';
+    echo "</center></td>";
+    echo "</tr>";
+    }
+?>
+</table>
 
 <!--              Add your code here end                   -->
 
